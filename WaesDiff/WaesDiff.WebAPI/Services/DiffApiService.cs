@@ -9,7 +9,7 @@
     using WaesDiff.Domain.Services;
     using WaesDiff.Domain.Settings;
     using WaesDiff.Infrastructure.Repository;
-    
+
     public class DiffApiService : IDiffApiService
     {
         private readonly Settings _options;
@@ -30,10 +30,20 @@
             if (string.IsNullOrEmpty(json))
                 throw new ArgumentException(_options.General.EmptyError, nameof(json));
 
+            byte[] byteConvert;
+            try
+            {
+                byteConvert = Convert.FromBase64String(json);
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException($"{_options.General.ErrorOnConverting} {ex.Message}");
+            }
+
             var jsonEntity = new JsonEntity
             {
                 Id = diffId,
-                Json = json,
+                Json = byteConvert,
                 JsonType = diffType
             };
 
@@ -46,10 +56,10 @@
             if (jsonDiff == null)
                 return new DiffResult { Message = $"{_options.General.NoDiffFound} {id}" };
 
-            if(jsonDiff.Count < 2)
-                return new DiffResult {Message = $"{_options.General.NoJsonForDiff} {id}"};
+            if (jsonDiff.Count < 2)
+                return new DiffResult { Message = $"{_options.General.NoJsonForDiff} {id}" };
 
-            return await _diffService.GetDiff(jsonDiff);
+            return await Task.Run(() => _diffService.GetDiff(jsonDiff));
         }
     }
 }

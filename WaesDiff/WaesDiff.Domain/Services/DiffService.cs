@@ -4,7 +4,6 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Threading.Tasks;
     using WaesDiff.Domain.Entities;
     using WaesDiff.Domain.Enum;
     using WaesDiff.Domain.Models;
@@ -14,16 +13,16 @@
     {
         private readonly Settings _options;
 
-        private string JsonLeft { get; set; }
+        private byte[] JsonLeft { get; set; }
 
-        private string JsonRight { get; set; }
+        private byte[] JsonRight { get; set; }
 
         public DiffService(IOptions<Settings> options)
         {
             _options = options.Value;
         }
 
-        public async Task<DiffResult> GetDiff(List<JsonEntity> jsonEntities)
+        public DiffResult GetDiff(List<JsonEntity> jsonEntities)
         {
             JsonLeft = jsonEntities.FirstOrDefault(q => q.JsonType == DiffType.Left)?.Json;
 
@@ -51,33 +50,14 @@
         }
 
         private DiffResult CheckDiff()
-        {
-            byte[] leftConvert, rightConvert;
-            try
-            {
-                leftConvert = Convert.FromBase64String(JsonLeft);
-            }
-            catch (Exception ex)
-            {
-                return new DiffResult { Message = $"{_options.General.ErrorDuringDiff} Error: {ex.Message}" };
-            }
-
-            try
-            {
-                rightConvert = Convert.FromBase64String(JsonRight);
-            }
-            catch (Exception ex)
-            {
-                return new DiffResult { Message = $"{_options.General.ErrorDuringDiff} Error: {ex.Message}" };
-            }
-
+        {            
             var diffResult = new DiffResult { Message = _options.General.JsonDifference };
 
             DiffDetail detail = null;
 
-            for (var index = 0; index < leftConvert.Length; index++)
+            for (var index = 0; index < JsonLeft.Length; index++)
             {
-                if (leftConvert[index] != rightConvert[index])
+                if (JsonLeft[index] != JsonRight[index])
                 {
                     if (detail == null)
                     {

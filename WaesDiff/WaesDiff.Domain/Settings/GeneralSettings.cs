@@ -12,6 +12,8 @@
 
         public string ErrorDuringDiff { get; set; }
 
+        public string ErrorOnConverting { get; set; }
+
         public string Inconclusive { get; set; }
 
         public string NotSameSize { get; set; }

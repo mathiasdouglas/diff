@@ -13,7 +13,7 @@
         public int Id { get; set; }
 
         [BsonElement("Json")]
-        public string Json { get; set; }
+        public byte[] Json { get; set; }
 
         [BsonElement("JsonType")]
         public DiffType JsonType { get; set; }
