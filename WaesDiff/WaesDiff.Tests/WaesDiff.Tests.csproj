@@ -6,6 +6,10 @@
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\net461\WaesDiff.API.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <None Remove="appsettings.json" />
   </ItemGroup>
