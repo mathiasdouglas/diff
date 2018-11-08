@@ -1,13 +1,11 @@
 ﻿namespace WaesDiff.Tests.UnitTests.Domain
 {
     using Microsoft.Extensions.Options;
-
     using WaesDiff.Domain.Services.Commands;
     using WaesDiff.Domain.Settings;
-
     using Xunit;
 
-    public class CheckSizeCommandTest
+    public static class CheckSizeCommandTest
     {
         [Fact]
         public static void VerifyDataWhenHaveSameSizeReturnNull()

@@ -1,16 +1,13 @@
 ﻿namespace WaesDiff.Tests.UnitTests.Domain
 {
-    using System.Collections.Generic;
-
     using Microsoft.Extensions.Options;
-
+    using System.Collections.Generic;
     using WaesDiff.Domain.Models;
     using WaesDiff.Domain.Services.Commands;
     using WaesDiff.Domain.Settings;
-
     using Xunit;
 
-    public class CheckDiffCommandTest
+    public static class CheckDiffCommandTest
     {
         [Fact]
         public static void VerifyDataIsEqualReturnEmptyList()

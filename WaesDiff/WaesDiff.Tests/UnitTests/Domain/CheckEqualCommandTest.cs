@@ -5,7 +5,7 @@
     using WaesDiff.Domain.Settings;
     using Xunit;
 
-    public class CheckEqualCommandTest
+    public static class CheckEqualCommandTest
     {
 
         [Fact]

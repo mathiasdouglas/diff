@@ -11,7 +11,7 @@
     using Xunit;
 
     /// <remarks>Here is possible to create more test, to verify Get Method or verify if Save data really save the data, but I think is ok for this prototype.</remarks>
-    public class DiffApiServiceTest
+    public static class DiffApiServiceTest
     {
         [Fact]
         public static void SaveDataWithEmptyDataReturnException()

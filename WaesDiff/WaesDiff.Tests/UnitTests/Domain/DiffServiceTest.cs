@@ -8,7 +8,7 @@
     using WaesDiff.Domain.Settings;
     using Xunit;
 
-    public class DiffServiceTest
+    public static class DiffServiceTest
     {
         [Fact]
         public static void ExecuteServiceWithoutCommandReturnInconclusiveMessage()
