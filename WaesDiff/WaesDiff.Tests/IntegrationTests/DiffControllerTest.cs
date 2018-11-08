@@ -11,7 +11,7 @@
     using WaesDiff.Domain.Enum;
     using Xunit;
 
-    /// <remarks>Its possible to do this tests Mocking the database, but I've just using database on the integration tests because this is a prototype. </remarks>
+    /// <remarks>Its possible (and correct) to do this tests Mocking the database, but I've just using database on the integration tests because this is a prototype. </remarks>
     public class DiffControllerTest
     {
         private readonly HttpClient _client;
