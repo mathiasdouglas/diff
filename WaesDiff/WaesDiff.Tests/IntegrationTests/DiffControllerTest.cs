@@ -11,7 +11,7 @@
     using WaesDiff.Domain.Enum;
     using Xunit;
 
-    /// <remarks>Its possible (and correct) to do this tests Mocking the database, but I've just using database on the integration tests because this is a prototype. </remarks>
+    /// <remarks>The correct way to do a integration test, is testing the entiry system with a database for test/QA (this could be done by change the configs on the appSettings), in this case I just let with the same database as the database that I used for develope this solution. </remarks>
     public class DiffControllerTest
     {
         private readonly HttpClient _client;
