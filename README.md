@@ -8,6 +8,8 @@ Steps run this API:
 
 3. Clone/download the repository (master branch) and run the API locally using the project WaesDiff.API as a startup project
 
+> The API documentation is on the swagger part
+
 # References
 https://docs.microsoft.com/en-us/dotnet/standard/microservices-architecture/microservice-ddd-cqrs-patterns/ddd-oriented-microservice
 
