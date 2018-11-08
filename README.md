@@ -11,9 +11,11 @@ Steps run this API:
 > The API documentation is on the swagger part
 
 # References
-https://docs.microsoft.com/en-us/dotnet/standard/microservices-architecture/microservice-ddd-cqrs-patterns/ddd-oriented-microservice
+* https://docs.microsoft.com/en-us/dotnet/standard/microservices-architecture/microservice-ddd-cqrs-patterns/ddd-oriented-microservice
 
-https://adamstorr.azurewebsites.net/blog/aspnetcore-and-the-strategy-pattern
+* https://adamstorr.azurewebsites.net/blog/aspnetcore-and-the-strategy-pattern
+
+* https://docs.microsoft.com/en-us/aspnet/core/test/integration-tests?view=aspnetcore-2.1
 
 # Useful Links
-https://cryptii.com/pipes/base64-to-hex
+* https://cryptii.com/pipes/base64-to-hex
