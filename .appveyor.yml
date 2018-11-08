@@ -38,9 +38,9 @@ before_build:
  - appveyor-retry dotnet restore "WaesDiff" -v Minimal
 
 build_script:
-  - dotnet build "WaesDiff/WaesDiff.API" -c %CONFIGURATION% --version-suffix %LABEL%
+  - dotnet build "WaesDiff/WaesDiff.WebAPI" -c %CONFIGURATION% --version-suffix %LABEL%
   - dotnet build "WaesDiff/WaesDiff.Domain" -c %CONFIGURATION% --version-suffix %LABEL%
-  - dotnet build "WaesDiff/WaesDiff.Domain" -c %CONFIGURATION% --version-suffix %LABEL%
+  - dotnet build "WaesDiff/WaesDiff.Infrastructure" -c %CONFIGURATION% --version-suffix %LABEL%
   
   - dotnet build "WaesDiff/WaesDiff.Tests" -c %CONFIGURATION% --version-suffix %LABEL%
   
