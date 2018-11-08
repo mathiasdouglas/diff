@@ -17,6 +17,10 @@ skip_tags: true
 image:
  - Visual Studio 2017
 
+# Use MongoDb as database
+services:
+ - mongodb
+
 init:
 - ps: $Env:LABEL = "CI" + $Env:APPVEYOR_BUILD_NUMBER.PadLeft(5, "0")
 
