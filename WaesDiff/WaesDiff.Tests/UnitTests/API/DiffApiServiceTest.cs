@@ -14,7 +14,7 @@
     public class DiffApiServiceTest
     {
         [Fact]
-        public void SaveDataWithEmptyDataReturnException()
+        public static void SaveDataWithEmptyDataReturnException()
         {
             //Arrange
             var settings = new Settings { Messages = new MessageSettings() };
@@ -29,7 +29,7 @@
         }
 
         [Fact]
-        public void SaveDataWithInvalidBase64DataReturnException()
+        public static void SaveDataWithInvalidBase64DataReturnException()
         {
             //Arrange
             var settings = new Settings { Messages = new MessageSettings() };

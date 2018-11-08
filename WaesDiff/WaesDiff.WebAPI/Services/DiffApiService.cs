@@ -67,7 +67,7 @@
             if (jsonDiff.Count < 2)
                 throw new KeyNotFoundException($"{_options.Messages.NoDataForDiff} {id}");
 
-            return await Task.Run(() => _diffService.GetDiff(jsonDiff));
+            return await Task.Run(() => _diffService.GetDiff(jsonDiff)).ConfigureAwait(false);
         }
     }
 }

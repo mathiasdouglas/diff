@@ -26,8 +26,8 @@
         /// <param name="filter">Filters to apply on find</param>
         public async Task<List<T>> Find(FilterDefinition<T> filter)
         {
-            IAsyncCursor<T> task = await GetCollection().FindAsync(filter);
-            List<T> list = await task.ToListAsync();
+            IAsyncCursor<T> task = await GetCollection().FindAsync(filter).ConfigureAwait(false);
+            List<T> list = await task.ToListAsync().ConfigureAwait(false);
             return list;
         }
 
@@ -41,7 +41,7 @@
         {
             UpdateOptions options = new UpdateOptions { IsUpsert = true };
 
-            return await GetCollection().ReplaceOneAsync(filter, replacement, options);
+            return await GetCollection().ReplaceOneAsync(filter, replacement, options).ConfigureAwait(false);
         }
 
         /// <summary>

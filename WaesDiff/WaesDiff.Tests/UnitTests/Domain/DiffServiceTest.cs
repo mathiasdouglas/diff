@@ -1,20 +1,17 @@
 ﻿namespace WaesDiff.Tests.UnitTests.Domain
 {
-    using System.Collections.Generic;
-
     using Microsoft.Extensions.Options;
-
+    using System.Collections.Generic;
     using WaesDiff.Domain.Entities;
     using WaesDiff.Domain.Services;
     using WaesDiff.Domain.Services.Commands;
     using WaesDiff.Domain.Settings;
-
     using Xunit;
 
     public class DiffServiceTest
     {
         [Fact]
-        public void ExecuteServiceWithoutCommandReturnInconclusiveMessage()
+        public static void ExecuteServiceWithoutCommandReturnInconclusiveMessage()
         {
             //Arrange
             var settings = new Settings { Messages = new MessageSettings { Inconclusive = "Inconclusive" } };

@@ -99,7 +99,7 @@
 
         #region private methods
 
-        private StringContent ConvertStringContent(string value)
+        private static StringContent ConvertStringContent(string value)
         {
             var jsonString = JsonConvert.SerializeObject(value);
             return new StringContent(jsonString, Encoding.UTF8, "application/json");

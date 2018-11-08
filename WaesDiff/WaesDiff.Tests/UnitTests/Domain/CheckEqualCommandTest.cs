@@ -1,17 +1,15 @@
 ﻿namespace WaesDiff.Tests.UnitTests.Domain
 {
     using Microsoft.Extensions.Options;
-
     using WaesDiff.Domain.Services.Commands;
     using WaesDiff.Domain.Settings;
-
     using Xunit;
 
     public class CheckEqualCommandTest
     {
 
         [Fact]
-        public void VerifyDataWhenIsEqualReturnNotNull()
+        public static void VerifyDataWhenIsEqualReturnNotNull()
         {
             //Arrange
             var settings = new Settings { Messages = new MessageSettings() };
@@ -26,7 +24,7 @@
         }
 
         [Fact]
-        public void VerifyDataWhenIsNotEqualReturnNull()
+        public static void VerifyDataWhenIsNotEqualReturnNull()
         {
             //Arrange
             var settings = new Settings { Messages = new MessageSettings() };

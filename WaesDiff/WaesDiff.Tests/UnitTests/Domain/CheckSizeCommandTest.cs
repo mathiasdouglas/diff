@@ -10,7 +10,7 @@
     public class CheckSizeCommandTest
     {
         [Fact]
-        public void VerifyDataWhenHaveSameSizeReturnNull()
+        public static void VerifyDataWhenHaveSameSizeReturnNull()
         {
             //Arrange
             var settings = new Settings { Messages = new MessageSettings() };
@@ -25,7 +25,7 @@
         }
 
         [Fact]
-        public void VerifyDataWhenDoNotHaveSameSizeReturnNotNull()
+        public static void VerifyDataWhenDoNotHaveSameSizeReturnNotNull()
         {
             //Arrange
             var settings = new Settings { Messages = new MessageSettings() };

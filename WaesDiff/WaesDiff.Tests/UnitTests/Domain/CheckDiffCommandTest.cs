@@ -13,7 +13,7 @@
     public class CheckDiffCommandTest
     {
         [Fact]
-        public void VerifyDataIsEqualReturnEmptyList()
+        public static void VerifyDataIsEqualReturnEmptyList()
         {
             //Arrange
             var settings = new Settings { Messages = new MessageSettings() };
@@ -28,7 +28,7 @@
         }
 
         [Fact]
-        public void VerifyDataIsNotEqualReturnDetail()
+        public static void VerifyDataIsNotEqualReturnDetail()
         {
             //Arrange
             var settings = new Settings { Messages = new MessageSettings() };
