@@ -2,11 +2,11 @@
 
 Steps run this API:
 
-1: download MongoDB: https://www.mongodb.com/dr/fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-4.0.1-signed.msi/download
+1. download MongoDB: https://www.mongodb.com/dr/fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-4.0.1-signed.msi/download
 
-2: Install MongoDB
+2. Install MongoDB
 
-3: Clone/download the repository (master branch) and run the API locally using the project WaesDiff.API as a startup project
+3. Clone/download the repository (master branch) and run the API locally using the project WaesDiff.API as a startup project
 
 # References
 https://docs.microsoft.com/en-us/dotnet/standard/microservices-architecture/microservice-ddd-cqrs-patterns/ddd-oriented-microservice
