@@ -9,7 +9,6 @@ version: 0.1.{build}-{branch}
 branches:
   only:
   - master
-  - dev
 
 # Do not build on tags (GitHub and BitBucket)
 skip_tags: true
@@ -39,11 +38,11 @@ before_build:
  - appveyor-retry dotnet restore -v Minimal
 
 build_script:
-  - dotnet build "WaesDiff.API" -c %CONFIGURATION% --version-suffix %LABEL%
-  - dotnet build "WaesDiff.Domain" -c %CONFIGURATION% --version-suffix %LABEL%
-  - dotnet build "WaesDiff.Domain" -c %CONFIGURATION% --version-suffix %LABEL%
+  - dotnet build "WaesDiff\WaesDiff.API" -c %CONFIGURATION% --version-suffix %LABEL%
+  - dotnet build "WaesDiff\WaesDiff.Domain" -c %CONFIGURATION% --version-suffix %LABEL%
+  - dotnet build "WaesDiff\WaesDiff.Domain" -c %CONFIGURATION% --version-suffix %LABEL%
   
-  - dotnet build "WaesDiff.Tests" -c %CONFIGURATION% --version-suffix %LABEL%
+  - dotnet build "WaesDiff\WaesDiff.Tests" -c %CONFIGURATION% --version-suffix %LABEL%
   
 after_build:
   - dotnet build -c %CONFIGURATION% --version-suffix %LABEL%
@@ -85,7 +84,7 @@ before_test:
 
 # to run your custom scripts instead of automatic tests
 test_script:
-  - dotnet test "WaesDiff.Tests" -c %CONFIGURATION%  
+  - dotnet test "WaesDiff\WaesDiff.Tests" -c %CONFIGURATION%  
 
   - OpenCover.Console.exe -register:user -target:"C:/Program Files/dotnet/dotnet.exe" -targetargs:"test /p:DebugType=full Tests/UnitTest" -output:"UnitTestResult.xml" -oldstyle
   
