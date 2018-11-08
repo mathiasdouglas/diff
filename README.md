@@ -6,7 +6,7 @@ Steps run this API:
 
 2: Install MongoDB
 
-3: Run the API locally clone/download the repository (master branch) and set startup project WaesDiff.API
+3: Clone/download the repository (master branch) and run the API locally using the project WaesDiff.API as a startup project
 
 # References
 https://docs.microsoft.com/en-us/dotnet/standard/microservices-architecture/microservice-ddd-cqrs-patterns/ddd-oriented-microservice
