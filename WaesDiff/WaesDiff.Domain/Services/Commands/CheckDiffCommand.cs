@@ -5,7 +5,7 @@
     using WaesDiff.Domain.Models;
     using WaesDiff.Domain.Settings;
 
-    public class CheckDiffCommand: IDiffCommand
+    public class CheckDiffCommand : IDiffCommand
     {
         public int Order => 3;
 
@@ -16,13 +16,18 @@
             _options = options.Value;
         }
 
+        /// <summary>
+        /// Get the diff between the data (left/right) and return the position and length of the differences
+        /// </summary>
+        /// <param name="dataEntityLeft">Entity of the left data</param>
+        /// <param name="dataEntityRight">entity of the right data</param>
         public DiffResult GetDiff(DataEntity dataEntityLeft, DataEntity dataEntityRight)
         {
             var diffResult = new DiffResult { Message = _options.Messages.DataDifference };
 
             DiffDetail detail = null;
 
-            for (var index = 0; index < dataEntityLeft.DataBase64.Length; index++)
+            for (long index = 0; index < dataEntityLeft.DataBase64.Length; index++)
             {
                 if (dataEntityLeft.DataBase64[index] != dataEntityRight.DataBase64[index])
                 {

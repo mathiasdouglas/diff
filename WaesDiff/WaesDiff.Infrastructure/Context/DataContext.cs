@@ -5,6 +5,9 @@
     using WaesDiff.Domain.Entities;
     using WaesDiff.Domain.Settings;
 
+    /// <summary>
+    /// Context of the DataEntity in the Mongo
+    /// </summary>
     public sealed class DataContext : IMongoContext<DataEntity>
     {
         public IMongoDatabase Database { get; }

@@ -2,6 +2,7 @@
 {
     using Microsoft.Extensions.Options;
     using System;
+    using System.Collections.Generic;
     using System.Threading.Tasks;
     using WaesDiff.Domain.Entities;
     using WaesDiff.Domain.Enum;
@@ -10,6 +11,7 @@
     using WaesDiff.Domain.Settings;
     using WaesDiff.Infrastructure.Repository;
 
+    /// <inheritdoc />
     public class DiffApiService : IDiffApiService
     {
         private readonly Settings _options;
@@ -18,6 +20,9 @@
 
         private readonly IDiffService _diffService;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public DiffApiService(IOptions<Settings> options, IDataRepository dataRepository, IDiffService diffService)
         {
             _dataRepository = dataRepository;
@@ -25,7 +30,8 @@
             _options = options.Value;
         }
 
-        public async Task SaveData(int id, string data, DataType dataType)
+        /// <inheritdoc />
+        public async Task SaveData(int id, string data, EnumDataType enumDataType)
         {
             if (string.IsNullOrEmpty(data))
                 throw new ArgumentException(_options.Messages.EmptyError, nameof(data));
@@ -45,20 +51,21 @@
                 Id = id,
                 Data = data,
                 DataBase64 = byteConvert,
-                DataType = dataType
+                EnumDataType = enumDataType
             };
 
             await _dataRepository.Save(dataEntity);
         }
 
+        /// <inheritdoc />
         public async Task<DiffResult> GetDiff(int id)
         {
             var jsonDiff = await _dataRepository.Get(id);
             if (jsonDiff == null)
-                return new DiffResult { Message = $"{_options.Messages.NoDiffFound} {id}" };
+                throw new KeyNotFoundException($"{_options.Messages.NoDiffFound} {id}");
 
             if (jsonDiff.Count < 2)
-                return new DiffResult { Message = $"{_options.Messages.NoDataForDiff} {id}" };
+                throw new KeyNotFoundException($"{_options.Messages.NoDataForDiff} {id}");
 
             return await Task.Run(() => _diffService.GetDiff(jsonDiff));
         }

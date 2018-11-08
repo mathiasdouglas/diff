@@ -7,6 +7,9 @@ namespace WaesDiff.Infrastructure.Repository
     using System.Threading.Tasks;
     using WaesDiff.Infrastructure.Context;
 
+    /// <summary>
+    /// Repository of the DataEntity
+    /// </summary>
     public class DataRepository : MongoRepository<DataEntity>, IDataRepository
     {
         public DataRepository(IMongoContext<DataEntity> mongoContext)

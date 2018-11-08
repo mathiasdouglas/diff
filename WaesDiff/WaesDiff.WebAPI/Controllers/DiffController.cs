@@ -7,18 +7,27 @@
     using WaesDiff.Domain.Enum;
     using WaesDiff.Domain.Models;
 
+    /// <summary>
+    /// Controller responsible for endpoints of the api
+    /// </summary>
     [Route("v{version:apiVersion}/[controller]")]
     [ApiController]
     public class DiffController : ControllerBase
     {
-        private IDiffApiService _diffApiService;
+        private readonly IDiffApiService _diffApiService;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public DiffController(IDiffApiService diffApiService)
         {
             _diffApiService = diffApiService;
         }
 
-        // GET api/values/5
+        /// <summary>
+        /// Get a result between the two data posted (left / right)
+        /// </summary>
+        /// <param name="id">id of the data posted</param>
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(DiffResult), StatusCodes.Status201Created)]
         public async Task<DiffResult> Get(int id)
@@ -35,7 +44,7 @@
         [ProducesResponseType(typeof(bool), StatusCodes.Status201Created)]
         public async Task PostLeft(int id, [FromBody] string dataLeft)
         {
-            await _diffApiService.SaveData(id, dataLeft, DataType.Left);
+            await _diffApiService.SaveData(id, dataLeft, EnumDataType.Left);
         }
 
         /// <summary>
@@ -47,7 +56,7 @@
         [ProducesResponseType(typeof(bool), StatusCodes.Status201Created)]
         public async Task PostRight(int id, [FromBody] string dataRight)
         {
-            await _diffApiService.SaveData(id, dataRight, DataType.Right);
+            await _diffApiService.SaveData(id, dataRight, EnumDataType.Right);
         }
     }
 }

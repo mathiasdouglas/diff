@@ -1,9 +1,12 @@
 ﻿namespace WaesDiff.Domain.Models
 {
+    /// <summary>
+    /// Model with the detail, when exist difference between data(left/right)
+    /// </summary>
     public class DiffDetail
     {
-        public int Offset { get; set; }
+        public long Offset { get; set; }
 
-        public int Length { get; set; }
+        public long Length { get; set; }
     }
 }

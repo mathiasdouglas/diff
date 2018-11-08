@@ -1,5 +1,8 @@
 ﻿namespace WaesDiff.Domain.Settings
 {
+    /// <summary>
+    /// Class responsible to getting Messages for the project
+    /// </summary>
     public class MessageSettings
     {
         public string EmptyError { get; set; }

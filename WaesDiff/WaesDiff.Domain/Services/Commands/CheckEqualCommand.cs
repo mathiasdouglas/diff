@@ -16,6 +16,11 @@
             _options = options.Value;
         }
 
+        /// <summary>
+        /// Verify if the data are equal
+        /// </summary>
+        /// <param name="dataEntityLeft">Entity of the left data</param>
+        /// <param name="dataEntityRight">entity of the right data</param>
         public DiffResult GetDiff(DataEntity dataEntityLeft, DataEntity dataEntityRight)
         {
             if (string.Equals(dataEntityLeft.Data, dataEntityRight.Data))

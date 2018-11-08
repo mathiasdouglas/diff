@@ -14,11 +14,18 @@
     {
         private readonly RequestDelegate _requestDelegate;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public ErrorHandlingMiddleware(RequestDelegate requestDelegate)
         {
             _requestDelegate = requestDelegate;
         }
 
+        /// <summary>
+        /// Method responsible for handler with the exceptions on the project
+        /// </summary>
+        /// <remarks>Here we can put some tool for monitoring or/and Log</remarks>
         public async Task Invoke(HttpContext context)
         {
             try

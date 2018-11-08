@@ -1,7 +1,7 @@
 ﻿namespace WaesDiff.Domain.Settings
 {
     /// <summary>
-    /// Class specific for keep the data necessary for connect to the database
+    /// Class specific to getting the data necessary to connect to the database
     /// </summary>
     public class MongoSettings
     {
