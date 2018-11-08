@@ -10,6 +10,10 @@
     <DocumentationFile>bin\Any CPU\Release\netcoreapp2.1\WaesDiff.API.xml</DocumentationFile>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netcoreapp2.1\WaesDiff.API.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <None Remove="appsettings.json" />
   </ItemGroup>
