@@ -93,5 +93,5 @@ test_script:
   - OpenCover.Console.exe -register:user -target:"C:/Program Files/dotnet/dotnet.exe" -targetargs:"test /p:DebugType=full WaesDiff/WaesDiff.Tests" -output:"UnitTestResult.xml" -oldstyle
   
 # scripts to run after tests
-#after_test:
+after_test:
 - codecov -f "UnitTestAPIResult.xml" -t 2ea0909f-2b38-400b-88ad-28713fdaebff 
