@@ -1,5 +1,4 @@
-# API DIFF [![Codacy Badge](https://api.codacy.com/project/badge/Grade/583d26fc38824a479be665d5293e7c72)](https://www.codacy.com/app/mathiasdouglas/diff?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=mathiasdouglas/diff&amp;utm_campaign=Badge_Grade)
-[![Build status](https://ci.appveyor.com/api/projects/status/shjyapmtnf9jdykv?svg=true)](https://ci.appveyor.com/project/mathiasdouglas/diff)
+# API DIFF [![Codacy Badge](https://api.codacy.com/project/badge/Grade/583d26fc38824a479be665d5293e7c72)](https://www.codacy.com/app/mathiasdouglas/diff?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=mathiasdouglas/diff&amp;utm_campaign=Badge_Grade)[![Build status](https://ci.appveyor.com/api/projects/status/shjyapmtnf9jdykv?svg=true)](https://ci.appveyor.com/project/mathiasdouglas/diff)
 
 Steps run this API:
 
