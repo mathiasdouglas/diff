@@ -4,10 +4,10 @@
     using System.Threading.Tasks;
     using WaesDiff.Domain.Entities;
 
-    public interface IJsonRepository
+    public interface IDataRepository
     {
-        Task Save(JsonEntity jsonEntity);
+        Task Save(DataEntity dataEntity);
 
-        Task<List<JsonEntity>> Get(int id);
+        Task<List<DataEntity>> Get(int id);
     }
 }

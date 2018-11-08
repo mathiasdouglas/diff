@@ -30,24 +30,24 @@
         /// Post the json left for diff
         /// </summary>
         /// <param name="id">id for create the link between json (left, right)</param>
-        /// <param name="jsonLeft">The value for the json left</param>
+        /// <param name="dataLeft">The value for the json left</param>
         [HttpPost("{id}/left")]
         [ProducesResponseType(typeof(bool), StatusCodes.Status201Created)]
-        public async Task PostLeft(int id, [FromBody] string jsonLeft)
+        public async Task PostLeft(int id, [FromBody] string dataLeft)
         {
-            await _diffApiService.SaveJson(id, jsonLeft, DiffType.Left);
+            await _diffApiService.SaveData(id, dataLeft, DataType.Left);
         }
 
         /// <summary>
         /// Post the json right for diff
         /// </summary>
         /// <param name="id">id for create the link between json (left, right)</param>
-        /// <param name="jsonRight">The value for the json right</param>
+        /// <param name="dataRight">The value for the json right</param>
         [HttpPost("{id}/right")]
         [ProducesResponseType(typeof(bool), StatusCodes.Status201Created)]
-        public async Task PostRight(int id, [FromBody] string jsonRight)
+        public async Task PostRight(int id, [FromBody] string dataRight)
         {
-            await _diffApiService.SaveJson(id, jsonRight, DiffType.Right);
+            await _diffApiService.SaveData(id, dataRight, DataType.Right);
         }
     }
 }

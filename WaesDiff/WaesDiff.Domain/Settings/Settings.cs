@@ -4,6 +4,6 @@
     {
         public MongoSettings Mongo { get; set; }
 
-        public GeneralSettings General { get; set; }
+        public MessageSettings Messages { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace WaesDiff.Domain.Enum
 {
-    public enum DiffType
+    public enum DataType
     {
         Left,
         Right

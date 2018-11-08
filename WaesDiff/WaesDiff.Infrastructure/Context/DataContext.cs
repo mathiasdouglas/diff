@@ -5,20 +5,20 @@
     using WaesDiff.Domain.Entities;
     using WaesDiff.Domain.Settings;
 
-    public sealed class JsonContext : IMongoContext<JsonEntity>
+    public sealed class DataContext : IMongoContext<DataEntity>
     {
         public IMongoDatabase Database { get; }
 
-        public IMongoCollection<JsonEntity> Collection { get; }
+        public IMongoCollection<DataEntity> Collection { get; }
 
-        public JsonContext(IOptions<Settings> options)
+        public DataContext(IOptions<Settings> options)
         {
             var mongoSettings = options.Value.Mongo;
 
             var client = new MongoClient(mongoSettings.ConnectionString);
             Database = client.GetDatabase(mongoSettings.Database);
 
-            Collection = Database.GetCollection<JsonEntity>(mongoSettings.Collection);
+            Collection = Database.GetCollection<DataEntity>(mongoSettings.Collection);
         }
     }
 }

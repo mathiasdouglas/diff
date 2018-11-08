@@ -6,6 +6,6 @@
 
     public interface IDiffService
     {
-        DiffResult GetDiff(List<JsonEntity> jsonEntities);
+        DiffResult GetDiff(List<DataEntity> dataEntities);
     }
 }

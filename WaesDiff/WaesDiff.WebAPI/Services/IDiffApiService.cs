@@ -12,11 +12,11 @@
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="diffId"></param>
-        /// <param name="json"></param>
-        /// <param name="diffType"></param>
+        /// <param name="id"></param>
+        /// <param name="data"></param>
+        /// <param name="dataType"></param>
         /// <returns></returns>
-        Task SaveJson(int diffId, string json, DiffType diffType);
+        Task SaveData(int id, string data, DataType dataType);
 
         /// <summary>
         /// 

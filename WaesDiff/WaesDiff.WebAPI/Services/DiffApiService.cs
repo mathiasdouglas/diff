@@ -14,50 +14,51 @@
     {
         private readonly Settings _options;
 
-        private readonly IJsonRepository _jsonRepository;
+        private readonly IDataRepository _dataRepository;
 
         private readonly IDiffService _diffService;
 
-        public DiffApiService(IOptions<Settings> options, IJsonRepository jsonRepository, IDiffService diffService)
+        public DiffApiService(IOptions<Settings> options, IDataRepository dataRepository, IDiffService diffService)
         {
-            _jsonRepository = jsonRepository;
+            _dataRepository = dataRepository;
             _diffService = diffService;
             _options = options.Value;
         }
 
-        public async Task SaveJson(int diffId, string json, DiffType diffType)
+        public async Task SaveData(int id, string data, DataType dataType)
         {
-            if (string.IsNullOrEmpty(json))
-                throw new ArgumentException(_options.General.EmptyError, nameof(json));
+            if (string.IsNullOrEmpty(data))
+                throw new ArgumentException(_options.Messages.EmptyError, nameof(data));
 
             byte[] byteConvert;
             try
             {
-                byteConvert = Convert.FromBase64String(json);
+                byteConvert = Convert.FromBase64String(data);
             }
             catch (Exception ex)
             {
-                throw new ArgumentException($"{_options.General.ErrorOnConverting} {ex.Message}");
+                throw new ArgumentException($"{_options.Messages.ErrorOnConverting} {ex.Message}");
             }
 
-            var jsonEntity = new JsonEntity
+            var dataEntity = new DataEntity
             {
-                Id = diffId,
-                Json = byteConvert,
-                JsonType = diffType
+                Id = id,
+                Data = data,
+                DataBase64 = byteConvert,
+                DataType = dataType
             };
 
-            await _jsonRepository.Save(jsonEntity);
+            await _dataRepository.Save(dataEntity);
         }
 
         public async Task<DiffResult> GetDiff(int id)
         {
-            var jsonDiff = await _jsonRepository.Get(id);
+            var jsonDiff = await _dataRepository.Get(id);
             if (jsonDiff == null)
-                return new DiffResult { Message = $"{_options.General.NoDiffFound} {id}" };
+                return new DiffResult { Message = $"{_options.Messages.NoDiffFound} {id}" };
 
             if (jsonDiff.Count < 2)
-                return new DiffResult { Message = $"{_options.General.NoJsonForDiff} {id}" };
+                return new DiffResult { Message = $"{_options.Messages.NoDataForDiff} {id}" };
 
             return await Task.Run(() => _diffService.GetDiff(jsonDiff));
         }

@@ -15,6 +15,7 @@
     using WaesDiff.API.Services;
     using WaesDiff.Domain.Entities;
     using WaesDiff.Domain.Services;
+    using WaesDiff.Domain.Services.Commands;
     using WaesDiff.Domain.Settings;
     using WaesDiff.Infrastructure.Context;
     using WaesDiff.Infrastructure.Repository;
@@ -48,7 +49,6 @@
                             opts.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
                         });
 
-            // Add API Version
             services.AddApiVersioning();
 
             services.AddSettings(Configuration);
@@ -67,11 +67,18 @@
                     options.SchemaFilter<XmlCommentsSchemaFilter>(comments);
                 });
 
+            //Application
             services.AddScoped<IDiffApiService, DiffApiService>();
-            services.AddScoped<IDiffService, DiffService>();
 
-            services.AddScoped<IMongoContext<JsonEntity>, JsonContext>();
-            services.AddScoped<IJsonRepository, JsonRepository>();
+            //Domain
+            services.AddScoped<IDiffService, DiffService>();
+            services.AddScoped<IDiffCommand, CheckEqualCommand>();
+            services.AddScoped<IDiffCommand, CheckSizeCommand>();
+            services.AddScoped<IDiffCommand, CheckDiffCommand>();
+
+            //Infrastructure
+            services.AddSingleton<IMongoContext<DataEntity>, DataContext>();
+            services.AddScoped<IDataRepository, DataRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
