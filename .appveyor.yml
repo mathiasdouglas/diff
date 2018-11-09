@@ -90,8 +90,8 @@ before_test:
 test_script:
   - dotnet test "WaesDiff/WaesDiff.Tests" -c %CONFIGURATION%  
 
-  - OpenCover.Console.exe -register:user -target:"C:/Program Files/dotnet/dotnet.exe" -targetargs:"test /p:DebugType=full WaesDiff/WaesDiff.Tests" -output:"UnitTestResult.xml" -oldstyle
+  - OpenCover.Console.exe -register:user -target:"C:/Program Files/dotnet/dotnet.exe" -targetargs:"test /p:DebugType=full WaesDiff/WaesDiff.Tests" -output:"WaesDiffTestResult.xml" -oldstyle
   
 # scripts to run after tests
 after_test:
-- codecov -f "UnitTestResult.xml" -t 2ea0909f-2b38-400b-88ad-28713fdaebff 
+- codecov -f "WaesDiffTestResult.xml" -t 2ea0909f-2b38-400b-88ad-28713fdaebff
