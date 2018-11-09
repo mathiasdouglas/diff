@@ -1,4 +1,4 @@
-# API DIFF [![Codacy Badge](https://api.codacy.com/project/badge/Grade/583d26fc38824a479be665d5293e7c72)](https://www.codacy.com/app/mathiasdouglas/diff?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=mathiasdouglas/diff&amp;utm_campaign=Badge_Grade)
+# API DIFF [![Codacy Badge](https://api.codacy.com/project/badge/Grade/583d26fc38824a479be665d5293e7c72)](https://www.codacy.com/app/mathiasdouglas/diff?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=mathiasdouglas/diff&amp;utm_campaign=Badge_Grade)[![Build status](https://ci.appveyor.com/api/projects/status/shjyapmtnf9jdykv?svg=true)](https://ci.appveyor.com/project/mathiasdouglas/diff)[![codecov](https://codecov.io/gh/mathiasdouglas/diff/branch/master/graph/badge.svg)](https://codecov.io/gh/mathiasdouglas/diff)
 
 Steps run this API:
 
@@ -11,9 +11,11 @@ Steps run this API:
 > The API documentation is on the swagger part
 
 # References
-https://docs.microsoft.com/en-us/dotnet/standard/microservices-architecture/microservice-ddd-cqrs-patterns/ddd-oriented-microservice
+* https://docs.microsoft.com/en-us/dotnet/standard/microservices-architecture/microservice-ddd-cqrs-patterns/ddd-oriented-microservice
 
-https://adamstorr.azurewebsites.net/blog/aspnetcore-and-the-strategy-pattern
+* https://adamstorr.azurewebsites.net/blog/aspnetcore-and-the-strategy-pattern
+
+* https://docs.microsoft.com/en-us/aspnet/core/test/integration-tests?view=aspnetcore-2.1
 
 # Useful Links
-https://cryptii.com/pipes/base64-to-hex
+* https://cryptii.com/pipes/base64-to-hex

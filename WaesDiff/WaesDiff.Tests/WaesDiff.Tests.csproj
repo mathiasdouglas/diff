@@ -7,7 +7,12 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\net461\WaesDiff.API.xml</DocumentationFile>
+    <DocumentationFile>bin\Any CPU\Debug\netcoreapp2.1\WaesDiff.API.xml</DocumentationFile>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Any CPU\Release\netcoreapp2.1\WaesDiff.API.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

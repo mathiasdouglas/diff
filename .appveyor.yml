@@ -17,6 +17,10 @@ skip_tags: true
 image:
  - Visual Studio 2017
 
+# Use MongoDb as database
+services:
+ - mongodb
+
 init:
 - ps: $Env:LABEL = "CI" + $Env:APPVEYOR_BUILD_NUMBER.PadLeft(5, "0")
 
@@ -86,8 +90,8 @@ before_test:
 test_script:
   - dotnet test "WaesDiff/WaesDiff.Tests" -c %CONFIGURATION%  
 
-  - OpenCover.Console.exe -register:user -target:"C:/Program Files/dotnet/dotnet.exe" -targetargs:"test /p:DebugType=full Tests/UnitTest" -output:"UnitTestResult.xml" -oldstyle
+  - OpenCover.Console.exe -register:user -target:"C:/Program Files/dotnet/dotnet.exe" -targetargs:"test /p:DebugType=full WaesDiff/WaesDiff.Tests" -output:"UnitTestResult.xml" -oldstyle
   
 # scripts to run after tests
-#after_test:
-# - codecov -f "UnitTestAPIResult.xml" -t 81c4ac46-b5bc-4d0d-8c4f-4de04812e6e3 
+after_test:
+- codecov -f "UnitTestResult.xml" -t 2ea0909f-2b38-400b-88ad-28713fdaebff 
