@@ -57,6 +57,8 @@ after_build:
 #---------------------------------#
   
 # environment variables
+environment:
+  CODACY_PROJECT_TOKEN: 909dd767787943658cde4290d6d68ee5
 
 # Automatically register private account and/or project AppVeyor NuGet feeds.
 nuget:
@@ -94,4 +96,4 @@ test_script:
   
 # scripts to run after tests
 after_test:
-- codecov -f "WaesDiffTestResult.xml" -t 2ea0909f-2b38-400b-88ad-28713fdaebff
+- codecov -f "WaesDiffTestResult.xml" -t f60348a8-b901-42c6-a4ce-39a82dbb75a8
