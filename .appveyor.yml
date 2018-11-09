@@ -57,6 +57,8 @@ after_build:
 #---------------------------------#
   
 # environment variables
+environment:
+  CODECOV_TOKEN: f60348a8-b901-42c6-a4ce-39a82dbb75a8
 
 # Automatically register private account and/or project AppVeyor NuGet feeds.
 nuget:
@@ -77,10 +79,21 @@ notifications:
   on_build_failure: true
   on_build_status_changed: true
   
-  #---------------------------------#
+#---------------------------------#
 #       tests configuration       #
 #---------------------------------#
+
+# scripts to run before tests
+before_test:
+ - choco install opencover.portable
+ - choco install codecov
 
 # to run your custom scripts instead of automatic tests
 test_script:
   - dotnet test "WaesDiff/WaesDiff.Tests" -c %CONFIGURATION%
+  
+  - OpenCover.Console.exe -register:user -target:"C:/Program Files/dotnet/dotnet.exe" -targetargs:"test /p:DebugType=full WaesDiff/WaesDiff.Tests" -output:"TestResult.xml" -oldstyle
+
+# scripts to run after tests
+after_test:
+ - codecov -f "TestResult.xml" -t f60348a8-b901-42c6-a4ce-39a82dbb75a8
