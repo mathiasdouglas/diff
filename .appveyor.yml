@@ -94,4 +94,4 @@ test_script:
   
 # scripts to run after tests
 after_test:
-- codecov -f "WaesDiffTestResult.xml" -t 2ea0909f-2b38-400b-88ad-28713fdaebff
+- codecov -f "WaesDiff/WaesDiffTestResult.xml" -t 2ea0909f-2b38-400b-88ad-28713fdaebff
