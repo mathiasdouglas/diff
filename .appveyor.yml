@@ -57,8 +57,6 @@ after_build:
 #---------------------------------#
   
 # environment variables
-environment:
-  CODACY_PROJECT_TOKEN: 909dd767787943658cde4290d6d68ee5
 
 # Automatically register private account and/or project AppVeyor NuGet feeds.
 nuget:
