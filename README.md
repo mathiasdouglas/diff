@@ -20,6 +20,7 @@ This API was made to perform the comparison between two strings with JSON base64
 
 **Exemple of POST:**
   > <host>/v1/diff/<ID>/left
+  
   > <host>/v1/diff/<ID>/right
   
 **Exemple of GET:**
@@ -28,6 +29,7 @@ This API was made to perform the comparison between two strings with JSON base64
 *Important: The GET will only return the diff if it is called before the right and left Post with correct values.*
 
 **Exemple of Rertun**
+```
 {
     "message": "There are differences between the two json, see details:",
     "detail": [
@@ -41,6 +43,7 @@ This API was made to perform the comparison between two strings with JSON base64
         }
     ]
 }
+```
 
 ## References
 * [microsoft-microservices-architecture](https://docs.microsoft.com/en-us/dotnet/standard/microservices-architecture/microservice-ddd-cqrs-patterns/ddd-oriented-microservice)
