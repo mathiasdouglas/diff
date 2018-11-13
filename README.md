@@ -10,12 +10,44 @@ Steps run this API:
 
 > The API documentation is on the swagger part
 
-# References
-* https://docs.microsoft.com/en-us/dotnet/standard/microservices-architecture/microservice-ddd-cqrs-patterns/ddd-oriented-microservice
+## API Usage Guide
+This document describes how to interact with the API
 
-* https://adamstorr.azurewebsites.net/blog/aspnetcore-and-the-strategy-pattern
+### About the API
+The API will respond to HTTP requests with the requested data in JSON format. When receiving POST requests, it expects to receive a payload formatted in JSON.
 
-* https://docs.microsoft.com/en-us/aspnet/core/test/integration-tests?view=aspnetcore-2.1
+This API was made to perform the comparison between two strings with JSON base64 encoded binary data, and returns where the difference(s) occur, and what the size of the difference. For this purpose, it has 3 endpoints, of which 2 for post representing the strings for comparison (right and left) and one for GET, to obtain the result of the comparison.
 
-# Useful Links
-* https://cryptii.com/pipes/base64-to-hex
+**Exemple of POST:**
+  > <host>/v1/diff/<ID>/left
+  > <host>/v1/diff/<ID>/right
+  
+**Exemple of GET:**
+  > <host>/v1/diff/<ID>
+
+*Important: The GET will only return the diff if it is called before the right and left Post with correct values.*
+
+**Exemple of Rertun**
+{
+    "message": "There are differences between the two json, see details:",
+    "detail": [
+        {
+            "offset": 1,
+            "length": 1
+        },
+        {
+            "offset": 61,
+            "length": 6
+        }
+    ]
+}
+
+## References
+* [microsoft-microservices-architecture](https://docs.microsoft.com/en-us/dotnet/standard/microservices-architecture/microservice-ddd-cqrs-patterns/ddd-oriented-microservice)
+
+* [strategy-pattern](https://adamstorr.azurewebsites.net/blog/aspnetcore-and-the-strategy-pattern)
+
+* [microsoft-integration-tests](https://docs.microsoft.com/en-us/aspnet/core/test/integration-tests?view=aspnetcore-2.1)
+
+## Useful Links
+* [base64-to-hex](https://cryptii.com/pipes/base64-to-hex)
