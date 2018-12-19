@@ -7,11 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WaesDiff.Infrastructure", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WaesDiff.API", "WaesDiff.WebAPI\WaesDiff.API.csproj", "{88DDC3EC-3008-403F-8D9F-9578AECFAA17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WaesDiff.Domain", "WaesDiff.Domain\WaesDiff.Domain.csproj", "{38D68654-0933-443A-BE3E-42A2AB98AE71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WaesDiff.Domain", "WaesDiff.Domain\WaesDiff.Domain.csproj", "{38D68654-0933-443A-BE3E-42A2AB98AE71}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{E66274FC-8E8C-499E-A20C-831D3BB7D9A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WaesDiff.Tests", "WaesDiff.Tests\WaesDiff.Tests.csproj", "{F00B272C-366B-4CCF-94F8-52B5840BE571}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WaesDiff.Tests", "WaesDiff.Tests\WaesDiff.Tests.csproj", "{F00B272C-366B-4CCF-94F8-52B5840BE571}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
