@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WaesDiff.API</name>
+    </assembly>
+    <members>
+        <member name="T:WaesDiff.API.Controllers.DiffController">
+            <summary>
+            Controller responsible for endpoints of the api
+            </summary>
+        </member>
+        <member name="M:WaesDiff.API.Controllers.DiffController.#ctor(WaesDiff.API.Services.IDiffApiService)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:WaesDiff.API.Controllers.DiffController.Get(System.Int32)">
+            <summary>
+            Get a result between the two data posted (left / right)
+            </summary>
+            <param name="id">id of the data posted</param>
+        </member>
+        <member name="M:WaesDiff.API.Controllers.DiffController.PostLeft(System.Int32,System.String)">
+            <summary>
+            Post the json left for diff
+            </summary>
+            <param name="id">id for create the link between json (left, right)</param>
+            <param name="dataLeft">The value for the json left</param>
+        </member>
+        <member name="M:WaesDiff.API.Controllers.DiffController.PostRight(System.Int32,System.String)">
+            <summary>
+            Post the json right for diff
+            </summary>
+            <param name="id">id for create the link between json (left, right)</param>
+            <param name="dataRight">The value for the json right</param>
+        </member>
+        <member name="T:WaesDiff.API.Middlewares.ErrorHandlingMiddleware">
+            <summary>
+            Class responsible for handler with any exception on the code
+            </summary>
+        </member>
+        <member name="M:WaesDiff.API.Middlewares.ErrorHandlingMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:WaesDiff.API.Middlewares.ErrorHandlingMiddleware.Invoke(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Method responsible for handler with the exceptions on the project
+            </summary>
+            <remarks>Here we can put some tool for monitoring or/and Log</remarks>
+        </member>
+        <member name="T:WaesDiff.API.Services.DiffApiService">
+            <inheritdoc />
+        </member>
+        <member name="M:WaesDiff.API.Services.DiffApiService.#ctor(Microsoft.Extensions.Options.IOptions{WaesDiff.Domain.Settings.Settings},WaesDiff.Infrastructure.Repository.IDataRepository,WaesDiff.Domain.Services.IDiffService)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:WaesDiff.API.Services.DiffApiService.SaveData(System.Int32,System.String,WaesDiff.Domain.Enum.EnumDataType)">
+            <inheritdoc />
+        </member>
+        <member name="M:WaesDiff.API.Services.DiffApiService.GetDiff(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="T:WaesDiff.API.Services.IDiffApiService">
+            <summary>
+            Service for the Application part of the project, responsible for save the data (left/right), and get the diff
+            </summary>
+        </member>
+        <member name="M:WaesDiff.API.Services.IDiffApiService.SaveData(System.Int32,System.String,WaesDiff.Domain.Enum.EnumDataType)">
+            <summary>
+            Save the data on the repository
+            </summary>
+            <param name="id">id of the data</param>
+            <param name="data">value of the data</param>
+            <param name="enumDataType">type of the data (left/right)</param>
+        </member>
+        <member name="M:WaesDiff.API.Services.IDiffApiService.GetDiff(System.Int32)">
+            <summary>
+            Get the diff between the data
+            </summary>
+            <param name="id">id of the data for the diff</param>
+        </member>
+    </members>
+</doc>
