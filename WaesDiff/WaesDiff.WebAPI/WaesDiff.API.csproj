@@ -10,6 +10,10 @@
     <DocumentationFile>C:\Users\jmhbn16\Documents\Projects\diff\WaesDiff\WaesDiff.WebAPI\WaesDiff.API.xml</DocumentationFile>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>C:\Users\jmhbn16\Documents\Projects\diff\WaesDiff\WaesDiff.WebAPI\WaesDiff.API.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
